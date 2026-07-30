@@ -11,11 +11,7 @@ print("\n====================================================")
 print("1. Create Dictionary")
 print("====================================================")
 
-student = {
-    "name": "Moin",
-    "age": 32,
-    "city": "Ahmedabad"
-}
+student = { "name": "Moin", "age": 32, "city": "Ahmedabad" }
 
 print(student)
 

@@ -71,7 +71,7 @@ print("Banana" in fruits)
 # =====================================================
 
 print("\n====================================================")
-print("6. Add Item")
+print("6. Add Item") # Add an item to a set using the add() method. If the item already exists, it will not be added again.
 print("====================================================")
 
 fruits.add("Banana")
@@ -84,7 +84,7 @@ print(fruits)
 # =====================================================
 
 print("\n====================================================")
-print("7. Update Set")
+print("7. Update Set") # Add multiple items to a set using the update() method. You can pass any iterable (list, tuple, dictionary, etc.) to the update() method.
 print("====================================================")
 
 fruits.update(["Kiwi", "Papaya"])
