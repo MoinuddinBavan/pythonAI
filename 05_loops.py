@@ -18,88 +18,10 @@ for i in range(1, 6):
 
 
 # =====================================================
-# 2. PRINT MESSAGE MULTIPLE TIMES
+# 2. WHILE LOOP
 # =====================================================
 
-print("2. Print Message Multiple Times")
-
-for i in range(1, 6):
-    print(i, "Hello Moin")
-
-
-# =====================================================
-# 3. START LOOP FROM ZERO
-# =====================================================
-
-print("3. Start Loop From Zero")
-
-for i in range(6):
-    print(i)
-
-
-# =====================================================
-# 4. REVERSE LOOP
-# =====================================================
-
-print("4. Reverse Loop")
-
-for i in range(10, 0, -1):
-    print(i)
-
-
-# =====================================================
-# 5. EVEN NUMBERS
-# =====================================================
-
-print("5. Even Numbers")
-
-for i in range(1, 21):
-    if i % 2 == 0:
-        print(i)
-
-
-# =====================================================
-# 6. ODD NUMBERS
-# =====================================================
-
-print("6. Odd Numbers")
-
-for i in range(1, 21):
-    if i % 2 != 0:
-        print(i)
-
-
-# =====================================================
-# 7. MULTIPLICATION TABLE
-# =====================================================
-
-print("7. Multiplication Table")
-
-table = 5
-
-for i in range(1, 11):
-    print(f"{table} x {i} = {table * i}")
-
-
-# =====================================================
-# 8. SUM OF NUMBERS
-# =====================================================
-
-print("8. Sum of Numbers")
-
-total = 0
-
-for i in range(1, 11):
-    total += i
-
-print(total)
-
-
-# =====================================================
-# 9. WHILE LOOP
-# =====================================================
-
-print("9. While Loop")
+print("2. While Loop")
 
 number = 1
 
@@ -109,24 +31,49 @@ while number <= 5:
 
 
 # =====================================================
-# 10. BREAK
+# 3. RANGE()
 # =====================================================
 
-print("10. Break")
+print("3. range()")
 
-for i in range(1, 11):
-    if i == 6:
-        break
+print(range(5))
+
+for i in range(5):
+    print(i)
+
+print("----------")
+
+for i in range(2, 7):
+    print(i)
+
+print("----------")
+
+for i in range(2, 11, 2):
     print(i)
 
 
 # =====================================================
-# 11. CONTINUE
+# 4. BREAK
 # =====================================================
 
-print("11. Continue")
+print("4. break")
+
+for i in range(1, 11):
+
+    if i == 6:
+        break
+
+    print(i)
+
+
+# =====================================================
+# 5. CONTINUE
+# =====================================================
+
+print("5. continue")
 
 for i in range(1, 6):
+
     if i == 3:
         continue
 
@@ -134,12 +81,13 @@ for i in range(1, 6):
 
 
 # =====================================================
-# 12. PASS
+# 6. PASS
 # =====================================================
 
-print("12. Pass")
+print("6. pass")
 
 for i in range(1, 6):
+
     if i == 3:
         pass
 
@@ -147,138 +95,295 @@ for i in range(1, 6):
 
 
 # =====================================================
-# 13. NESTED LOOP
+# 7. REVERSE LOOP
 # =====================================================
 
-print("13. Nested Loop")
+print("7. Reverse Loop")
+
+for i in range(10, 0, -1):
+    print(i)
+
+
+# =====================================================
+# 8. EVEN NUMBERS
+# =====================================================
+
+print("8. Even Numbers")
+
+for i in range(1, 21):
+
+    if i % 2 == 0:
+        print(i)
+
+
+# =====================================================
+# 9. ODD NUMBERS
+# =====================================================
+
+print("9. Odd Numbers")
+
+for i in range(1, 21):
+
+    if i % 2 != 0:
+        print(i)
+
+
+# =====================================================
+# 10. MULTIPLICATION TABLE
+# =====================================================
+
+print("10. Multiplication Table")
+
+table = 7
+
+for i in range(1, 11):
+
+    print(f"{table} x {i} = {table * i}")
+
+
+# =====================================================
+# 11. SUM OF NUMBERS
+# =====================================================
+
+print("11. Sum of Numbers")
+
+total = 0
+
+for i in range(1, 101):
+    total += i
+
+print(total)
+
+
+# =====================================================
+# 12. NESTED LOOP
+# =====================================================
+
+print("12. Nested Loop")
 
 for row in range(1, 4):
+
     for col in range(1, 4):
+
         print("Row:", row, "Column:", col)
 
 
 # =====================================================
-# 14. STAR PATTERN
+# 13. STAR PATTERN
 # =====================================================
 
-print("14. Star Pattern")
+print("13. Star Pattern")
 
 for row in range(1, 6):
+
     stars = ""
 
     for col in range(row):
+
         stars += "*"
 
     print(stars)
 
 
 # =====================================================
-# 15. REVERSE STAR PATTERN
+# 14. REVERSE STAR PATTERN
 # =====================================================
 
-print("15. Reverse Star Pattern")
+print("14. Reverse Star Pattern")
 
 for row in range(5, 0, -1):
+
     stars = ""
 
     for col in range(row):
+
         stars += "*"
 
     print(stars)
 
 
 # =====================================================
-# 16. RANGE()
+# 15. LOOP THROUGH LIST
 # =====================================================
 
-print("16. range()")
+print("15. Loop Through List")
 
-for i in range(5):
-    print(i)
+students = [
+    "Moin",
+    "Aamir",
+    "Yasin"
+]
 
-print("-----")
-
-for i in range(2, 8):
-    print(i)
-
-print("-----")
-
-for i in range(2, 20, 3):
-    print(i)
+for student in students:
+    print(student)
 
 
 # =====================================================
-# 17. ENUMERATE()
+# 16. LOOP THROUGH TUPLE
 # =====================================================
 
-print("17. enumerate()")
+print("16. Loop Through Tuple")
 
-students = ["Moin", "Aamir", "Yasin"]
+colors = (
+    "Red",
+    "Green",
+    "Blue"
+)
+
+for color in colors:
+    print(color)
+
+
+# =====================================================
+# 17. LOOP THROUGH SET
+# =====================================================
+
+print("17. Loop Through Set")
+
+numbers = {
+    10,
+    20,
+    30,
+    40
+}
+
+for number in numbers:
+    print(number)
+
+
+# =====================================================
+# 18. LOOP THROUGH DICTIONARY
+# =====================================================
+
+print("18. Loop Through Dictionary")
+
+employee = {
+    "name": "Moin",
+    "age": 32,
+    "city": "Ahmedabad"
+}
+
+for key in employee:
+
+    print(key, ":", employee[key])
+
+
+# =====================================================
+# 19. ENUMERATE()
+# =====================================================
+
+print("19. enumerate()")
+
+students = [
+    "Moin",
+    "Aamir",
+    "Yasin"
+]
 
 for index, student in enumerate(students):
+
     print(index, student)
 
 
 # =====================================================
-# 18. FOR...ELSE
+# 20. ZIP()
 # =====================================================
 
-print("18. for...else")
+print("20. zip()")
+
+names = [
+    "Moin",
+    "Aamir",
+    "Yasin"
+]
+
+marks = [
+    85,
+    72,
+    91
+]
+
+for name, mark in zip(names, marks):
+
+    print(name, mark)
+
+
+# =====================================================
+# 21. FOR...ELSE
+# =====================================================
+
+print("21. for...else")
 
 for i in range(1, 6):
     print(i)
+
 else:
     print("Loop Finished")
 
 
 # =====================================================
-# 19. WHILE...ELSE
+# 22. WHILE...ELSE
 # =====================================================
 
-print("19. while...else")
+print("22. while...else")
 
 count = 1
 
 while count <= 5:
+
     print(count)
+
     count += 1
+
 else:
     print("While Loop Finished")
 
 
 # =====================================================
-# 20. REAL EXAMPLE
+# 23. REAL EXAMPLE
 # =====================================================
 
-print("20. Student Marks")
+print("23. Student Marks")
 
-marks = [85, 74, 91, 63, 58]
+marks = [
+    85,
+    74,
+    91,
+    63,
+    58
+]
 
 for mark in marks:
+
     print(mark)
 
 
 # =====================================================
-# 21. REAL EXAMPLE
+# 24. REAL EXAMPLE
 # =====================================================
 
-print("21. Employee Salary")
+print("24. Employee Salary")
 
-salaries = [35000, 45000, 52000]
+salaries = [
+    35000,
+    45000,
+    52000
+]
 
-total = 0
+total_salary = 0
 
 for salary in salaries:
-    total += salary
 
-print("Total Salary =", total)
+    total_salary += salary
+
+print("Total Salary :", total_salary)
 
 
 # =====================================================
-# 22. REAL EXAMPLE
+# 25. REAL EXAMPLE
 # =====================================================
 
-print("22. Product List")
+print("25. Product List")
 
 products = [
     "Laptop",
@@ -288,52 +393,84 @@ products = [
 ]
 
 for product in products:
+
     print(product)
 
 
 # =====================================================
-# 23. REAL EXAMPLE
+# 26. REAL EXAMPLE
 # =====================================================
 
-print("23. AI Prompts")
+print("26. Shopping Cart")
+
+cart = [
+    250,
+    180,
+    420,
+    150
+]
+
+bill = 0
+
+for item in cart:
+
+    bill += item
+
+print("Total Bill :", bill)
+
+
+# =====================================================
+# 27. REAL EXAMPLE
+# =====================================================
+
+print("27. AI Prompts")
 
 prompts = [
     "Explain Python",
-    "Write SQL Query",
-    "Create React Component"
+    "Create SQL Query",
+    "Write React Component"
 ]
 
 for prompt in prompts:
+
     print(prompt)
 
 
 # =====================================================
-# 24. SUMMARY
+# 28. REAL EXAMPLE
 # =====================================================
 
-print("24. Summary")
+print("28. API Data")
+
+users = [
+    {"name": "Moin"},
+    {"name": "Aamir"},
+    {"name": "Yasin"}
+]
+
+for user in users:
+
+    print(user["name"])
+
+
+# =====================================================
+# 29. SUMMARY
+# =====================================================
+
+print("29. Summary")
 
 # print("for")
 # print("while")
+# print("range()")
 # print("break")
 # print("continue")
 # print("pass")
-# print("nested loops")
-# print("range()")
+# print("Nested Loop")
+# print("Loop Through List")
+# print("Loop Through Tuple")
+# print("Loop Through Set")
+# print("Loop Through Dictionary")
 # print("enumerate()")
+# print("zip()")
 # print("for...else")
 # print("while...else")
-
-# NOTE:
-# We already learned "for...of" in JavaScript.
-#
-# Python's "for" loop works similarly to JavaScript's "for...of".
-#
-# JavaScript
-# for (let item of array)
-#
-# Python
-# for item in array
-#
-# Python does NOT have a traditional "for...in" like JavaScript.
-# In Python, "for ... in" is the normal loop syntax.

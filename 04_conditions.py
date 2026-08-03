@@ -16,7 +16,7 @@ print("1. Simple if")
 age = 20
 
 if age >= 18:
-    print("You can vote.")
+    print("You are eligible to vote.")
 
 
 # =====================================================
@@ -25,12 +25,12 @@ if age >= 18:
 
 print("2. if...else")
 
-age = 16
+marks = 28
 
-if age >= 18:
-    print("Eligible for voting")
+if marks >= 35:
+    print("Pass")
 else:
-    print("Not Eligible")
+    print("Fail")
 
 
 # =====================================================
@@ -70,47 +70,80 @@ if age >= 18:
     if has_license:
         print("You can drive.")
     else:
-        print("Apply for a driving license.")
+        print("Please apply for a driving license.")
 else:
-    print("You are underage.")
+    print("You are under age.")
 
 
 # =====================================================
-# 5. COMPARISON OPERATORS
+# 5. SHORT HAND if
 # =====================================================
 
-print("5. Comparison Operators")
+print("5. Short Hand if")
 
-a = 20
-b = 10
+salary = 50000
 
-print(a == b)
-print(a != b)
-print(a > b)
-print(a < b)
-print(a >= b)
-print(a <= b)
+if salary >= 40000: print("Bonus Approved")
 
 
 # =====================================================
-# 6. LOGICAL OPERATORS
+# 6. SHORT HAND if...else
 # =====================================================
 
-print("6. Logical Operators")
+print("6. Short Hand if...else")
 
-age = 25
-salary = 40000
+age = 17
 
-print(age >= 18 and salary >= 30000)
-print(age >= 18 or salary >= 50000)
-print(not(age >= 18))
+print("Adult") if age >= 18 else print("Minor")
 
 
 # =====================================================
-# 7. MEMBERSHIP OPERATOR
+# 7. LOGICAL OPERATOR - and
 # =====================================================
 
-print("7. Membership Operator")
+print("7. Logical Operator - and")
+
+username = "admin"
+password = "12345"
+
+if username == "admin" and password == "12345":
+    print("Login Successful")
+else:
+    print("Invalid Login")
+
+
+# =====================================================
+# 8. LOGICAL OPERATOR - or
+# =====================================================
+
+print("8. Logical Operator - or")
+
+is_admin = False
+is_manager = True
+
+if is_admin or is_manager:
+    print("Access Granted")
+else:
+    print("Access Denied")
+
+
+# =====================================================
+# 9. LOGICAL OPERATOR - not
+# =====================================================
+
+print("9. Logical Operator - not")
+
+is_blocked = False
+
+if not is_blocked:
+    print("User Active")
+
+
+# =====================================================
+# 10. MEMBERSHIP OPERATOR
+# =====================================================
+
+print("10. Membership Operator")
 
 students = ["Moin", "Aamir", "Yasin"]
 
@@ -119,61 +152,54 @@ if "Moin" in students:
 
 
 # =====================================================
-# 8. IDENTITY OPERATOR
+# 11. IDENTITY OPERATOR
 # =====================================================
 
-print("8. Identity Operator")
+print("11. Identity Operator")
 
-x = [1, 2]
-y = x
+a = [10, 20]
+b = a
 
-print(x is y)
-print(x is not y)
-
-
-# =====================================================
-# 9. TERNARY OPERATOR
-# =====================================================
-
-print("9. Ternary Operator")
-
-age = 22
-
-message = "Adult" if age >= 18 else "Minor"
-
-print(message)
+if a is b:
+    print("Both variables refer to same object")
 
 
 # =====================================================
-# 10. MATCH CASE (Python 3.10+)
+# 12. MATCH CASE (Python 3.10+)
 # =====================================================
 
-print("10. Match Case")
+print("12. Match Case")
 
 day = 3
 
 match day:
+
     case 1:
         print("Monday")
+
     case 2:
         print("Tuesday")
+
     case 3:
         print("Wednesday")
+
     case 4:
         print("Thursday")
+
     case 5:
         print("Friday")
+
     case _:
         print("Weekend")
 
 
 # =====================================================
-# 11. REAL EXAMPLE
+# 13. REAL EXAMPLE
 # =====================================================
 
-print("11. Student Result")
+print("13. Student Result")
 
-marks = 58
+marks = 91
 
 if marks >= 35:
     print("Pass")
@@ -182,44 +208,12 @@ else:
 
 
 # =====================================================
-# 12. REAL EXAMPLE
-# =====================================================
-
-print("12. Login System")
-
-username = "admin"
-password = "12345"
-
-if username == "admin" and password == "12345":
-    print("Login Successful")
-else:
-    print("Invalid Username or Password")
-
-
-# =====================================================
-# 13. REAL EXAMPLE
-# =====================================================
-
-print("13. ATM Withdrawal")
-
-balance = 5000
-withdraw = 3000
-
-if withdraw <= balance:
-    balance -= withdraw
-    print("Withdrawal Successful")
-    print("Remaining Balance:", balance)
-else:
-    print("Insufficient Balance")
-
-
-# =====================================================
 # 14. REAL EXAMPLE
 # =====================================================
 
 print("14. Employee Bonus")
 
-salary = 60000
+salary = 55000
 
 if salary >= 50000:
     print("Bonus Approved")
@@ -233,7 +227,7 @@ else:
 
 print("15. Product Stock")
 
-stock = 12
+stock = 8
 
 if stock > 0:
     print("Product Available")
@@ -245,55 +239,67 @@ else:
 # 16. REAL EXAMPLE
 # =====================================================
 
-print("16. AI Model Settings")
+print("16. Shopping Discount")
 
-temperature = 0.7
+amount = 3500
 
-if temperature < 0.3:
-    print("Focused Responses")
-
-elif temperature < 0.8:
-    print("Balanced Responses")
-
+if amount >= 3000:
+    print("10% Discount")
 else:
-    print("Creative Responses")
+    print("No Discount")
 
 
 # =====================================================
 # 17. REAL EXAMPLE
 # =====================================================
 
-print("17. Age Category")
+print("17. AI Prompt")
 
-age = 65
+temperature = 0.7
 
-if age < 13:
-    print("Child")
+if temperature < 0.3:
+    print("Focused Response")
 
-elif age < 20:
-    print("Teenager")
-
-elif age < 60:
-    print("Adult")
+elif temperature < 0.8:
+    print("Balanced Response")
 
 else:
-    print("Senior Citizen")
+    print("Creative Response")
 
 
 # =====================================================
-# 18. SUMMARY
+# 18. REAL EXAMPLE
 # =====================================================
 
-print("18. Summary")
+print("18. ATM Withdrawal")
+
+balance = 12000
+withdraw = 3000
+
+if withdraw <= balance:
+    balance -= withdraw
+    print("Withdrawal Successful")
+    print("Remaining Balance :", balance)
+else:
+    print("Insufficient Balance")
+
+
+# =====================================================
+# 19. SUMMARY
+# =====================================================
+
+print("19. Summary")
 
 # print("if")
 # print("if...else")
 # print("if...elif...else")
 # print("Nested if")
-# print("Comparison Operators")
-# print("Logical Operators")
+# print("Short Hand if")
+# print("Short Hand if...else")
+# print("and")
+# print("or")
+# print("not")
 # print("Membership Operator")
 # print("Identity Operator")
-# print("Ternary Operator")
 # print("Match Case")
 # print("Real-world Examples")
