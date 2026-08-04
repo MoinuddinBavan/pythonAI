@@ -95,7 +95,7 @@ employee("Yasin", 45000)
 
 
 # =====================================================
-# 8. ARBITRARY ARGUMENTS (*args)
+# 8. ARBITRARY ARGUMENTS (*args) # Many positional arguments → Python collects them into a Tuple.
 # =====================================================
 
 print("8. *args")
@@ -109,7 +109,7 @@ total(5, 15, 25, 35)
 
 
 # =====================================================
-# 9. KEYWORD ARGUMENTS (**kwargs)
+# 9. KEYWORD ARGUMENTS (**kwargs) # Many keyword arguments → Python collects them into a Dictionary.
 # =====================================================
 
 print("9. **kwargs")
@@ -121,7 +121,7 @@ profile(name="Moin", city="Ahmedabad", age=32)
 
 
 # =====================================================
-# 10. LOCAL VARIABLE
+# 10. LOCAL VARIABLE 
 # =====================================================
 
 print("10. Local Variable")
