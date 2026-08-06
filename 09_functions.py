@@ -33,12 +33,13 @@ greet("Aamir")
 
 
 # =====================================================
-# 3. FUNCTION WITH MULTIPLE PARAMETERS
+# 3. MULTIPLE PARAMETERS
 # =====================================================
 
 print("3. Multiple Parameters")
 
 def student(name, age):
+
     print("Name :", name)
     print("Age :", age)
 
@@ -52,9 +53,10 @@ student("Moin", 32)
 print("4. Return Value")
 
 def add(a, b):
+
     return a + b
 
-result = add(10, 20)
+result = add(20, 30)
 
 print(result)
 
@@ -66,6 +68,7 @@ print(result)
 print("5. Default Parameters")
 
 def country(name, country="India"):
+
     print(name, "-", country)
 
 country("Moin")
@@ -73,61 +76,65 @@ country("John", "USA")
 
 
 # =====================================================
-# 6. KEYWORD ARGUMENTS
+# 6. POSITIONAL ARGUMENTS
 # =====================================================
 
-print("6. Keyword Arguments")
+print("6. Positional Arguments")
 
 def employee(name, salary):
+
     print(name)
     print(salary)
 
-employee(salary=50000, name="Aamir")
+employee("Aamir", 50000)
 
 
 # =====================================================
-# 7. POSITIONAL ARGUMENTS
+# 7. KEYWORD ARGUMENTS
 # =====================================================
 
-print("7. Positional Arguments")
+print("7. Keyword Arguments")
 
-employee("Yasin", 45000)
+employee(salary=60000, name="Yasin")
 
 
 # =====================================================
-# 8. ARBITRARY ARGUMENTS (*args) # Many positional arguments → Python collects them into a Tuple.
+# 8. *args
 # =====================================================
 
 print("8. *args")
 
 def total(*numbers):
+
     print(numbers)
     print(sum(numbers))
 
 total(10, 20, 30)
-total(5, 15, 25, 35)
+total(5, 10, 15, 20)
 
 
 # =====================================================
-# 9. KEYWORD ARGUMENTS (**kwargs) # Many keyword arguments → Python collects them into a Dictionary.
+# 9. **kwargs
 # =====================================================
 
 print("9. **kwargs")
 
 def profile(**data):
+
     print(data)
 
 profile(name="Moin", city="Ahmedabad", age=32)
 
 
 # =====================================================
-# 10. LOCAL VARIABLE 
+# 10. LOCAL VARIABLE
 # =====================================================
 
 print("10. Local Variable")
 
 def demo():
-    message = "Hello"
+
+    message = "Python"
 
     print(message)
 
@@ -143,6 +150,7 @@ print("11. Global Variable")
 company = "AIZ INFOTECHS"
 
 def show_company():
+
     print(company)
 
 show_company()
@@ -152,15 +160,17 @@ show_company()
 # 12. RETURN MULTIPLE VALUES
 # =====================================================
 
-print("12. Multiple Return Values")
+print("12. Return Multiple Values")
 
-def calculation(a, b):
-    return a + b, a - b
+def calculate(a, b):
 
-addition, subtraction = calculation(20, 10)
+    return a+b, a-b, a*b
+
+addition, subtraction, multiplication = calculate(20, 10)
 
 print(addition)
 print(subtraction)
+print(multiplication)
 
 
 # =====================================================
@@ -170,10 +180,13 @@ print(subtraction)
 print("13. Function Calling Function")
 
 def hello():
+
     print("Hello")
 
 def welcome():
+
     hello()
+
     print("Welcome")
 
 welcome()
@@ -196,6 +209,10 @@ def countdown(number):
 
 countdown(5)
 
+# NOTE:
+# Recursion belongs to a later topic.
+# We are learning only the basic idea here.
+
 
 # =====================================================
 # 15. DOCSTRING
@@ -205,7 +222,7 @@ print("15. Docstring")
 
 def square(number):
     """
-    Returns square of a number.
+    Returns square of number.
     """
 
     return number * number
@@ -220,16 +237,35 @@ print(square(5))
 print("16. Type Hints")
 
 def multiply(a: int, b: int) -> int:
+
     return a * b
 
 print(multiply(5, 4))
 
+# NOTE:
+# Type Hints will be covered in detail later.
+
 
 # =====================================================
-# 17. REAL EXAMPLE
+# 17. LAMBDA FUNCTION
 # =====================================================
 
-print("17. Student Result")
+print("17. Lambda Function")
+
+square = lambda number: number * number
+
+print(square(5))
+
+# NOTE:
+# Lambda belongs to the next topic.
+# We are introducing it here only.
+
+
+# =====================================================
+# 18. REAL EXAMPLE
+# =====================================================
+
+print("18. Student Result")
 
 def result(name, marks):
 
@@ -240,15 +276,15 @@ def result(name, marks):
 
     print(name, "-", status)
 
-result("Moin", 80)
-result("Aamir", 25)
+result("Moin", 82)
+result("Aamir", 28)
 
 
 # =====================================================
-# 18. REAL EXAMPLE
+# 19. REAL EXAMPLE
 # =====================================================
 
-print("18. Employee Salary")
+print("19. Employee Salary")
 
 def salary_after_bonus(salary):
 
@@ -260,36 +296,36 @@ print(salary_after_bonus(50000))
 
 
 # =====================================================
-# 19. REAL EXAMPLE
+# 20. REAL EXAMPLE
 # =====================================================
 
-print("19. Product Discount")
+print("20. Product Discount")
 
 def final_price(price, discount):
 
     return price - (price * discount / 100)
 
-print(final_price(5000, 15))
-
-
-# =====================================================
-# 20. REAL EXAMPLE
-# =====================================================
-
-print("20. AI Prompt")
-
-def generate_prompt(topic):
-
-    return f"Explain {topic} in simple language."
-
-print(generate_prompt("Machine Learning"))
+print(final_price(2500, 15))
 
 
 # =====================================================
 # 21. REAL EXAMPLE
 # =====================================================
 
-print("21. Login")
+print("21. AI Prompt")
+
+def ai_prompt(topic):
+
+    return f"Explain {topic} in simple language."
+
+print(ai_prompt("Machine Learning"))
+
+
+# =====================================================
+# 22. REAL EXAMPLE
+# =====================================================
+
+print("22. Login")
 
 def login(username, password):
 
@@ -302,40 +338,570 @@ print(login("admin", "12345"))
 
 
 # =====================================================
-# 22. SUMMARY
+# 23. SUMMARY
 # =====================================================
 
-print("22. Summary")
+print("23. Summary")
 
-# print("def")
-# print("Parameters")
-# print("Arguments")
-# print("return")
-# print("Default Parameters")
-# print("Keyword Arguments")
-# print("*args")
-# print("**kwargs")
-# print("Local Variables")
-# print("Global Variables")
-# print("Recursion")
-# print("Docstring")
-# print("Type Hints")
+print("def")
+print("Parameters")
+print("Arguments")
+print("Return")
+print("Default Parameters")
+print("Positional Arguments")
+print("Keyword Arguments")
+print("*args")
+print("**kwargs")
+print("Local Variable")
+print("Global Variable")
+print("Recursion")
+print("Docstring")
+print("Type Hints")
+print("Lambda")
 
-# NOTE:
-#
-# JavaScript                Python
-# -----------------------------------------
-# function demo()      -> def demo():
-# return               -> return
-# parameters           -> parameters
-# arguments            -> arguments
-# ...args              -> *args
-# object               -> **kwargs
-#
-# Functions are the foundation of:
-# ✔ Flask
-# ✔ Django
-# ✔ FastAPI
-# ✔ AI Projects
-# ✔ Automation
-# ✔ APIs
+
+# =====================================================
+# PYTHON LAMBDA FUNCTIONS
+# =====================================================
+
+print("=" * 50)
+print("Python Lambda Functions")
+print("=" * 50)
+
+
+# =====================================================
+# 1. SIMPLE LAMBDA
+# =====================================================
+
+print("1. Simple Lambda")
+
+square = lambda number: number * number
+
+print(square(5))
+
+
+# =====================================================
+# 2. LAMBDA WITH TWO PARAMETERS
+# =====================================================
+
+print("2. Two Parameters")
+
+add = lambda a, b: a + b
+
+print(add(10, 20))
+
+
+# =====================================================
+# 3. LAMBDA WITH THREE PARAMETERS
+# =====================================================
+
+print("3. Three Parameters")
+
+total = lambda a, b, c: a + b + c
+
+print(total(10, 20, 30))
+
+
+# =====================================================
+# 4. NORMAL FUNCTION VS LAMBDA
+# =====================================================
+
+print("4. Normal Function vs Lambda")
+
+def square1(number):
+    return number * number
+
+square2 = lambda number: number * number
+
+print(square1(5))
+print(square2(5))
+
+
+# =====================================================
+# 5. LAMBDA INSIDE VARIABLE
+# =====================================================
+
+print("5. Lambda Variable")
+
+multiply = lambda a, b: a * b
+
+print(multiply(8, 6))
+
+
+# =====================================================
+# 6. LAMBDA WITH if...else
+# =====================================================
+
+print("6. Lambda with if...else")
+
+result = lambda marks: "Pass" if marks >= 35 else "Fail"
+
+print(result(80))
+print(result(22))
+
+
+# =====================================================
+# 7. sorted()
+# =====================================================
+
+numbers = [45, 12, 78, 25, 90]
+
+print(sorted(numbers))
+print(sorted(numbers, reverse=True))
+
+
+
+# =====================================================
+# 8. sorted() with Lambda
+# =====================================================
+
+students = [
+    ("Moin", 82),
+    ("Aamir", 65),
+    ("Yasin", 91)
+]
+
+print(sorted(students, key=lambda student: student[1]))
+
+
+# =====================================================
+# 9. map()
+# =====================================================
+
+print("9. map()")
+
+numbers = [1, 2, 3, 4, 5]
+
+square = list(map(lambda x: x * x, numbers))
+
+print(square)
+
+
+# =====================================================
+# 10. filter()
+# =====================================================
+
+print("10. filter()")
+
+numbers = [10, 15, 20, 25, 30]
+
+even = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(even)
+
+
+# =====================================================
+# 11. reduce()
+# =====================================================
+
+print("11. reduce()")
+
+from functools import reduce
+
+numbers = [10, 20, 30, 40]
+
+total = reduce(lambda a, b: a + b, numbers)
+
+print(total)
+
+
+# =====================================================
+# 12. max()
+# =====================================================
+
+print("12. max()")
+
+students = [
+    ("Moin", 82),
+    ("Aamir", 65),
+    ("Yasin", 91)
+]
+
+highest = max(students, key=lambda student: student[1])
+
+print(highest)
+
+
+# =====================================================
+# 13. min()
+# =====================================================
+
+print("13. min()")
+
+lowest = min(students, key=lambda student: student[1])
+
+print(lowest)
+
+
+# =====================================================
+# 14. REAL EXAMPLE
+# =====================================================
+
+print("14. Student Result")
+
+marks = [85, 72, 91, 64]
+
+result = list(map(lambda x: "Pass" if x >= 35 else "Fail", marks))
+
+print(result)
+
+
+# =====================================================
+# 15. REAL EXAMPLE
+# =====================================================
+
+print("15. Employee Bonus")
+
+salary = [30000, 45000, 60000]
+
+bonus = list(map(lambda x: x + 5000, salary))
+
+print(bonus)
+
+
+# =====================================================
+# 16. REAL EXAMPLE
+# =====================================================
+
+print("16. Product Discount")
+
+prices = [1200, 2500, 4000]
+
+discount = list(map(lambda x: x * 0.90, prices))
+
+print(discount)
+
+
+# =====================================================
+# 17. REAL EXAMPLE
+# =====================================================
+
+print("17. AI Temperature")
+
+temperatures = [0.2, 0.7, 1.0]
+
+labels = list(map(
+    lambda t: "Focused" if t < 0.3 else
+              "Balanced" if t < 0.8 else
+              "Creative",
+    temperatures
+))
+
+print(labels)
+
+
+# =====================================================
+# 18. SUMMARY
+# =====================================================
+
+print("18. Summary")
+
+print("lambda")
+print("Multiple Parameters")
+print("if...else")
+print("sorted()")
+print("sort()")
+print("map()")
+print("filter()")
+print("reduce()")
+print("max()")
+print("min()")
+
+
+
+
+
+# =====================================================
+# PYTHON SCOPE & RECURSION
+# =====================================================
+
+print("=" * 50)
+print("Python Scope & Recursion")
+print("=" * 50)
+
+
+# =====================================================
+# 1. LOCAL VARIABLE
+# =====================================================
+
+print("1. Local Variable")
+
+def student():
+
+    name = "Moin"
+
+    print(name)
+
+student()
+
+# print(name)   # Error
+
+
+# =====================================================
+# 2. GLOBAL VARIABLE
+# =====================================================
+
+print("2. Global Variable")
+
+company = "AIZ INFOTECHS"
+
+def office():
+
+    print(company)
+
+office()
+
+print(company)
+
+
+# =====================================================
+# 3. LOCAL VS GLOBAL
+# =====================================================
+
+print("3. Local vs Global")
+
+name = "Global"
+
+def demo():
+
+    name = "Local"
+
+    print(name)
+
+demo()
+
+print(name)
+
+
+# =====================================================
+# 4. global KEYWORD
+# =====================================================
+
+print("4. global Keyword")
+
+count = 10
+
+def update():
+
+    global count
+
+    count += 5
+
+update()
+
+print(count)
+
+
+# =====================================================
+# 5. GLOBAL VARIABLE INSIDE FUNCTION
+# =====================================================
+
+print("5. Global Variable")
+
+message = "Welcome"
+
+def show():
+
+    print(message)
+
+show()
+
+
+# =====================================================
+# 6. NESTED FUNCTION
+# =====================================================
+
+print("6. Nested Function")
+
+def outer():
+
+    print("Outer Function")
+
+    def inner():
+
+        print("Inner Function")
+
+    inner()
+
+outer()
+
+
+# =====================================================
+# 7. RECURSION
+# =====================================================
+
+print("7. Recursion")
+
+def countdown(number):
+
+    if number == 0:
+        return
+
+    print(number)
+
+    countdown(number - 1)
+
+countdown(5)
+
+
+# =====================================================
+# 8. FACTORIAL USING RECURSION
+# =====================================================
+
+print("8. Factorial")
+
+def factorial(number):
+
+    if number == 1:
+        return 1
+
+    return number * factorial(number - 1)
+
+print(factorial(5))
+
+
+# =====================================================
+# 9. SUM USING RECURSION
+# =====================================================
+
+print("9. Sum Using Recursion")
+
+def total(number):
+
+    if number == 0:
+        return 0
+
+    return number + total(number - 1)
+
+print(total(5))
+
+
+# =====================================================
+# 10. FIBONACCI
+# =====================================================
+
+print("10. Fibonacci")
+
+def fibonacci(number):
+
+    if number <= 1:
+        return number
+
+    return fibonacci(number - 1) + fibonacci(number - 2)
+
+for i in range(10):
+
+    print(fibonacci(i))
+
+
+# =====================================================
+# 11. RECURSION VS LOOP
+# =====================================================
+
+print("11. Recursion vs Loop")
+
+print("Loop")
+
+for i in range(1, 6):
+
+    print(i)
+
+print("Recursion")
+
+def display(number):
+
+    if number == 6:
+        return
+
+    print(number)
+
+    display(number + 1)
+
+display(1)
+
+
+# =====================================================
+# 12. REAL EXAMPLE
+# =====================================================
+
+print("12. Student")
+
+student_name = "Moin"
+
+def student():
+
+    marks = 85
+
+    print(student_name)
+
+    print(marks)
+
+student()
+
+
+# =====================================================
+# 13. REAL EXAMPLE
+# =====================================================
+
+print("13. Employee")
+
+company = "AIZ INFOTECHS"
+
+def employee():
+
+    salary = 50000
+
+    print(company)
+
+    print(salary)
+
+employee()
+
+
+# =====================================================
+# 14. REAL EXAMPLE
+# =====================================================
+
+print("14. Shopping")
+
+cart = [1200, 800, 600]
+
+def bill():
+
+    total = sum(cart)
+
+    print(total)
+
+bill()
+
+
+# =====================================================
+# 15. REAL EXAMPLE
+# =====================================================
+
+print("15. AI Prompt")
+
+prompt = "Explain Machine Learning"
+
+def ai():
+
+    print(prompt)
+
+ai()
+
+
+# =====================================================
+# 16. SUMMARY
+# =====================================================
+
+print("16. Summary")
+
+print("Local Variable")
+print("Global Variable")
+print("global Keyword")
+print("Nested Function")
+print("Recursion")
+print("Factorial")
+print("Sum")
+print("Fibonacci")
+print("Recursion vs Loop")
