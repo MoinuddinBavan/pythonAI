@@ -11,100 +11,112 @@ print("=" * 50)
 # 1. OPEN FILE (READ MODE)
 # =====================================================
 
-print("1. Open File")
+print("\n1. Open File (Read Mode)")
 
-# file = open("data.txt", "r")
-# print(file.read())
-# file.close()
+# "r" means Read Mode.
+# The file must already exist.
+
+with open("data.txt", "r") as file:
+    print(file.read())
 
 
 # =====================================================
 # 2. READ FILE
 # =====================================================
 
-print("2. Read File")
+print("\n2. read()")
 
-# file = open("data.txt", "r")
-# print(file.read())
-# file.close()
+# read() reads the complete file.
+
+with open("data.txt", "r") as file:
+    content = file.read()
+    print(content)
 
 
 # =====================================================
 # 3. READ ONE LINE
 # =====================================================
 
-print("3. Read One Line")
+print("\n3. readline()")
 
-# file = open("data.txt", "r")
-# print(file.readline())
-# file.close()
+# readline() reads one line at a time.
+
+with open("data.txt", "r") as file:
+    print(file.readline())
 
 
 # =====================================================
 # 4. READ ALL LINES
 # =====================================================
 
-print("4. Read All Lines")
+print("\n4. readlines()")
 
-# file = open("data.txt", "r")
-# print(file.readlines())
-# file.close()
+# readlines() returns all lines as a list.
+
+with open("data.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
 
 
 # =====================================================
 # 5. LOOP THROUGH FILE
 # =====================================================
 
-print("5. Loop Through File")
+print("\n5. Loop Through File")
 
-# file = open("data.txt", "r")
-#
-# for line in file:
-#     print(line.strip())
-#
-# file.close()
+with open("data.txt", "r") as file:
+    for line in file:
+        print(line.strip())
 
 
 # =====================================================
 # 6. WRITE FILE
 # =====================================================
 
-print("6. Write File")
+print("\n6. Write File")
 
-# file = open("demo.txt", "w")
-# file.write("Hello Python")
-# file.close()
+# "w" means Write Mode.
+# Creates the file if it does not exist.
+# WARNING: Existing content is overwritten.
+
+with open("demo.txt", "w") as file:
+    file.write("Hello Python")
+
+print("Data written to demo.txt")
 
 
 # =====================================================
 # 7. APPEND FILE
 # =====================================================
 
-print("7. Append File")
+print("\n7. Append File")
 
-# file = open("demo.txt", "a")
-# file.write("\nWelcome")
-# file.close()
+# "a" means Append Mode.
+# Adds new content without deleting old content.
+
+with open("demo.txt", "a") as file:
+    file.write("\nWelcome to File Handling")
+
+print("Data appended to demo.txt")
 
 
 # =====================================================
 # 8. WITH OPEN()
 # =====================================================
 
-print("8. with open()")
+print("\n8. with open()")
 
-# with open("data.txt", "r") as file:
-#
-#     print(file.read())
+# with open() automatically closes the file.
 
-# Automatically closes the file.
+with open("data.txt", "r") as file:
+    print(file.read())
 
 
 # =====================================================
 # 9. CHECK FILE EXISTS
 # =====================================================
 
-print("9. File Exists")
+print("\n9. Check File Exists")
 
 import os
 
@@ -115,21 +127,24 @@ print(os.path.exists("data.txt"))
 # 10. DELETE FILE
 # =====================================================
 
-print("10. Delete File")
+print("\n10. Delete File")
 
-# import os
-#
-# os.remove("demo.txt")
+# Use os.remove() to delete a file.
+# Kept commented so the file is not deleted accidentally.
+
+# if os.path.exists("demo.txt"):
+#     os.remove("demo.txt")
+#     print("demo.txt deleted")
 
 
 # =====================================================
 # 11. FILE MODES
 # =====================================================
 
-print("11. File Modes")
+print("\n11. File Modes")
 
 print("r  -> Read")
-print("w  -> Write")
+print("w  -> Write / Overwrite")
 print("a  -> Append")
 print("x  -> Create")
 print("rb -> Read Binary")
@@ -140,78 +155,90 @@ print("wb -> Write Binary")
 # 12. CREATE FILE
 # =====================================================
 
-print("12. Create File")
+print("\n12. Create File")
 
-# file = open("new.txt", "x")
-# file.close()
+# "x" creates a new file.
+# It gives an error if the file already exists.
+
+# with open("new.txt", "x") as file:
+#     pass
 
 
 # =====================================================
-# 13. REAL EXAMPLE
+# 13. STUDENT REPORT EXAMPLE
 # =====================================================
 
-print("13. Student Report")
+print("\n13. Student Report")
 
 student = "Moin"
-
 marks = 91
 
-# with open("student.txt", "w") as file:
-#
-#     file.write(student)
-#     file.write("\n")
-#     file.write(str(marks))
+with open("student.txt", "w") as file:
+    file.write(student)
+    file.write("\n")
+    file.write(str(marks))
+
+print("Student report created")
 
 
 # =====================================================
-# 14. REAL EXAMPLE
+# 14. EMPLOYEE LOG EXAMPLE
 # =====================================================
 
-print("14. Employee Log")
+print("\n14. Employee Log")
 
-# with open("employees.txt", "a") as file:
-#
-#     file.write("Aamir - 50000\n")
+with open("employees.txt", "a") as file:
+    file.write("Aamir - 50000\n")
+
+print("Employee added to log")
 
 
 # =====================================================
-# 15. REAL EXAMPLE
+# 15. AI PROMPT EXAMPLE
 # =====================================================
 
-print("15. AI Prompt")
+print("\n15. AI Prompt")
 
 prompt = "Explain Machine Learning"
 
-# with open("prompt.txt", "w") as file:
-#
-#     file.write(prompt)
+with open("prompt.txt", "w") as file:
+    file.write(prompt)
+
+print("Prompt saved")
 
 
 # =====================================================
-# 16. REAL EXAMPLE
+# 16. APPLICATION LOG EXAMPLE
 # =====================================================
 
-print("16. Application Log")
+print("\n16. Application Log")
 
-# with open("log.txt", "a") as file:
-#
-#     file.write("Application Started\n")
+with open("log.txt", "a") as file:
+    file.write("Application Started\n")
+
+print("Application log updated")
 
 
 # =====================================================
 # 17. SUMMARY
 # =====================================================
 
-print("17. Summary")
+print("\n17. Summary")
 
-print("open()")
-print("read()")
-print("readline()")
-print("readlines()")
-print("write()")
-print("append()")
-print("close()")
-print("with open()")
-print("File Modes")
-print("os.path.exists()")
-print("os.remove()")
+print("""
+open()          -> Open a file
+read()          -> Read complete file
+readline()      -> Read one line
+readlines()     -> Read all lines into a list
+write()         -> Write data
+close()         -> Close file
+with open()     -> Automatically closes file
+
+r  -> Read
+w  -> Write / Overwrite
+a  -> Append
+x  -> Create
+
+os.path.exists() -> Check whether file exists
+os.remove()      -> Delete file
+""")

@@ -22,13 +22,13 @@ import csv
 
 print("2. Write CSV")
 
-# with open("students.csv", "w", newline="") as file:
-#
-#     writer = csv.writer(file)
-#
-#     writer.writerow(["Name", "Marks"])
-#     writer.writerow(["Moin", 90])
-#     writer.writerow(["Aamir", 85])
+with open("students.csv", "w", newline="") as file:
+
+    writer = csv.writer(file)
+
+    writer.writerow(["Name", "Marks"])
+    writer.writerow(["Moin", 90])
+    writer.writerow(["Aamir", 85])
 
 
 # =====================================================
@@ -37,45 +37,45 @@ print("2. Write CSV")
 
 print("3. Read CSV")
 
-# with open("students.csv", "r") as file:
-#
-#     reader = csv.reader(file)
-#
-#     for row in reader:
-#         print(row)
+with open("students.csv", "r") as file:
+
+    reader = csv.reader(file)
+
+    for row in reader:
+        print(row)
 
 
 # =====================================================
-# 4. DICTIONARY WRITER
+# 4. DICTIONARY WRITER # DictWriter = Write CSV using Dictionary
 # =====================================================
 
 print("4. DictWriter")
 
-# with open("employees.csv", "w", newline="") as file:
-#
-#     fields = ["Name", "Salary"]
-#
-#     writer = csv.DictWriter(file, fieldnames=fields)
-#
-#     writer.writeheader()
-#
-#     writer.writerow({"Name":"Moin","Salary":50000})
-#     writer.writerow({"Name":"Aamir","Salary":60000})
+with open("employees.csv", "w", newline="") as file:
+
+    fields = ["Name", "Salary"]
+
+    writer = csv.DictWriter(file, fieldnames=fields)
+
+    writer.writeheader()
+
+    writer.writerow({"Name":"Moin","Salary":50000})
+    writer.writerow({"Name":"Aamir","Salary":60000})
 
 
 # =====================================================
-# 5. DICTIONARY READER
+# 5. DICTIONARY READER # DictReader = Read CSV using Dictionary
 # =====================================================
 
 print("5. DictReader")
 
-# with open("employees.csv", "r") as file:
-#
-#     reader = csv.DictReader(file)
-#
-#     for row in reader:
-#
-#         print(row["Name"], row["Salary"])
+with open("employees.csv", "r") as file:
+
+    reader = csv.DictReader(file)
+
+    for row in reader:
+
+        print(row["Name"], row["Salary"])
 
 
 # =====================================================
@@ -125,14 +125,14 @@ print(type(python_data))
 
 print("9. Write JSON")
 
-# employee = {
-#     "name":"Moin",
-#     "salary":50000
-# }
-#
-# with open("employee.json","w") as file:
-#
-#     json.dump(employee,file,indent=4)
+employee = {
+    "name":"Moin",
+    "salary":50000
+}
+
+with open("employee.json","w") as file:
+
+    json.dump(employee,file,indent=4)
 
 
 # =====================================================
@@ -141,11 +141,11 @@ print("9. Write JSON")
 
 print("10. Read JSON")
 
-# with open("employee.json","r") as file:
-#
-#     data = json.load(file)
-#
-#     print(data)
+with open("employee.json","r") as file:
+
+    data = json.load(file)
+
+    print(data)
 
 
 # =====================================================
@@ -277,7 +277,7 @@ print("sort_keys")
 # ✔ ChatGPT APIs
 #
 #
-# Remember:
+# Remember: 
 #
 # dumps()  -> Python Object → JSON String
 #

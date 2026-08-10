@@ -200,12 +200,12 @@ print("14. Recursion")
 
 def countdown(number):
 
-    if number == 0:
+    if number == 0: # base case
         return
 
     print(number)
 
-    countdown(number - 1)
+    countdown(number - 1) # recursive call
 
 countdown(5)
 
@@ -777,8 +777,16 @@ print(total(5))
 
 
 # =====================================================
-# 10. FIBONACCI
+# 10. FIBONACCI # Every next number = previous two numbers added together.
 # =====================================================
+
+# FIBONACCI
+#      ↓
+# Start: 0, 1
+#      ↓
+# Add previous two numbers
+#      ↓
+# 0, 1, 1, 2, 3, 5, 8, 13...
 
 print("10. Fibonacci")
 

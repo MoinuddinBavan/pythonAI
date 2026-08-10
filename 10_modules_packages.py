@@ -8,7 +8,7 @@ print("=" * 50)
 
 
 # =====================================================
-# 1. IMPORT MODULE
+# 1. IMPORT MODULE # Module = a Python file/toolbox containing ready-made code that we can reuse.
 # =====================================================
 
 print("1. Import Module")
@@ -17,6 +17,8 @@ import math
 
 print(math.sqrt(25))
 print(math.factorial(5))
+
+
 
 
 # =====================================================
@@ -102,7 +104,7 @@ print(os.getcwd())
 
 
 # =====================================================
-# 9. SYS MODULE
+# 9. SYS MODULE # Provides access to some variables used or maintained by the Python interpreter.
 # =====================================================
 
 print("9. Sys Module")
@@ -123,35 +125,6 @@ import platform
 print(platform.system())
 print(platform.machine())
 
-
-# =====================================================
-# 11. CREATE YOUR OWN MODULE
-# =====================================================
-
-print("11. Custom Module")
-
-print("Create file:")
-print("calculator.py")
-
-print("def add(a, b):")
-print("    return a + b")
-
-# Import Example:
-#
-# import calculator
-#
-# print(calculator.add(10,20))
-
-
-# =====================================================
-# 12. IMPORT CUSTOM MODULE
-# =====================================================
-
-print("12. Import Custom Module")
-
-print("import calculator")
-
-print("calculator.add(5,10)")
 
 
 # =====================================================
@@ -186,56 +159,6 @@ from calculator.math import add
 """)
 
 
-# =====================================================
-# 15. __name__
-# =====================================================
-
-print("15. __name__")
-
-print(__name__)
-
-
-# =====================================================
-# 16. __name__ == "__main__"
-# =====================================================
-
-print("16. Main Check")
-
-if __name__ == "__main__":
-
-    print("Running Directly")
-
-else:
-
-    print("Imported")
-
-
-# =====================================================
-# 17. PIP MODULES
-# =====================================================
-
-print("17. pip Modules")
-
-print("""
-pip install requests
-
-pip install numpy
-
-pip install pandas
-""")
-
-
-# =====================================================
-# 18. REQUIREMENTS.TXT
-# =====================================================
-
-print("18. requirements.txt")
-
-print("""
-pip freeze > requirements.txt
-
-pip install -r requirements.txt
-""")
 
 
 # =====================================================
@@ -246,7 +169,7 @@ print("19. Random OTP")
 
 import random
 
-otp = random.randint(1000, 9999)
+otp = random.randint(100000, 999999)
 
 print("OTP :", otp)
 
@@ -313,9 +236,3 @@ print("datetime")
 print("os")
 print("sys")
 print("platform")
-print("Custom Module")
-print("Package")
-print("__name__")
-print("__main__")
-print("pip")
-print("requirements.txt")
