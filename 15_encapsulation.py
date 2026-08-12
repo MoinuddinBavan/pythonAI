@@ -44,7 +44,7 @@ print(student.marks)
 
 
 # =====================================================
-# 3. PROTECTED CONVENTION
+# 3. PROTECTED CONVENTION # 
 # =====================================================
 
 print("3. Protected Property")
@@ -178,38 +178,7 @@ employee.set_salary(60000)
 print(employee.get_salary())
 
 
-# =====================================================
-# 8. PROPERTY DECORATOR
-# =====================================================
 
-print("8. @property")
-
-
-class Product:
-
-    def __init__(self, price):
-
-        self.__price = price
-
-    @property
-    def price(self):
-
-        return self.__price
-
-    @price.setter
-    def price(self, value):
-
-        if value >= 0:
-            self.__price = value
-
-
-product = Product(5000)
-
-print(product.price)
-
-product.price = 6000
-
-print(product.price)
 
 
 # =====================================================
@@ -267,4 +236,3 @@ print("Protected Convention _name")
 print("Private Property __name")
 print("Getter")
 print("Setter")
-print("@property")

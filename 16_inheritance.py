@@ -78,7 +78,7 @@ print(student.name)
 
 
 # =====================================================
-# 5. super()
+# 5. super() # we use super() when we want to add additional functionality to the constructor of the child class.
 # =====================================================
 
 print("5. super()")
@@ -100,10 +100,7 @@ class Student(Person):
         self.marks = marks
 
 
-student = Student(
-    "Moin",
-    90
-)
+student = Student( "Moin", 90 )
 
 print(student.name)
 print(student.marks)
@@ -152,7 +149,7 @@ class Animal:
 
 class Dog(Animal):
 
-    def sound(self):
+    def sound(self): # overriding the sound method of the Animal class
 
         print("Bark")
 
