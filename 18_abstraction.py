@@ -7,6 +7,10 @@ print("Python Abstraction")
 print("=" * 50)
 
 
+# ABC = enables the abstract-class mechanism
+
+# @abstractmethod = marks a method as compulsory
+
 # =====================================================
 # 1. WHAT IS ABSTRACTION?
 # =====================================================

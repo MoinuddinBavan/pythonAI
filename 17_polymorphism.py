@@ -127,20 +127,10 @@ print("6. Built-in Polymorphism")
 
 print(len("Python"))
 
-print(
-    len(
-        [10, 20, 30]
-    )
-)
+print(len([10, 20, 30, "Python"]))
 
-print(
-    len(
-        {
-            "name": "Moin",
-            "age": 32
-        }
-    )
-)
+
+print(len({"name": "Moin", "course": "Python"}))
 
 
 # Same len()
