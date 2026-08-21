@@ -24,6 +24,8 @@ import re
 
 print("2. What is Regex?")
 
+
+
 # Regex is used to:
 #
 # Search text
@@ -42,12 +44,13 @@ print("2. What is Regex?")
 
 
 # =====================================================
-# 3. re.search()
+# 3. re.search() # search ANYWHERE in the string
 # =====================================================
 
 print("3. re.search()")
 
-text = "I am learning Python"
+text = "I am learning Python and python is easy"
+
 
 result = re.search("Python", text)
 
@@ -75,7 +78,7 @@ else:
 
 
 # =====================================================
-# 5. re.match()
+# 5. re.match() # match FROM START of the string
 # =====================================================
 
 print("5. re.match()")
@@ -112,7 +115,7 @@ print(re.match("Python", text))
 
 
 # =====================================================
-# 7. re.findall()
+# 7. re.findall() # find ALL matches
 # =====================================================
 
 print("7. re.findall()")
@@ -130,7 +133,7 @@ print(result)
 
 
 # =====================================================
-# 8. re.finditer()
+# 8. re.finditer() # find ALL matches with positions
 # =====================================================
 
 print("8. re.finditer()")
@@ -146,7 +149,7 @@ for match in matches:
 
 
 # =====================================================
-# 9. re.sub()
+# 9. re.sub() # replace text
 # =====================================================
 
 print("9. re.sub()")
@@ -167,14 +170,14 @@ print(result)
 
 
 # =====================================================
-# 10. re.split()
+# 10. re.split() # split text
 # =====================================================
 
 print("10. re.split()")
 
-text = "Python,Java,PHP,JavaScript"
+text = "Python_Java_PHP_JavaScript"
 
-result = re.split(",", text)
+result = re.split("_", text)
 
 print(result)
 
@@ -194,9 +197,33 @@ print(pattern)
 # using raw strings:
 #
 # r"\d+"
+
+# r"" → Raw string
 #
 # This avoids Python treating
 # backslashes as escape characters.
+
+# \d  → digit
+# \d+ → one or more digits
+# \D  → non digit
+# \w  → word character
+# \w+ → one or more word characters
+# \W  → non word character
+# \s  → whitespace
+# \S  → non whitespace
+# \b  → word boundary
+# .   → any character
+# ^   → start of string
+# $   → end of string
+# *   → zero or more
+# +   → one or more
+# ?   → zero or one
+# {n} → exactly n
+# {n,m} → between n and m
+# []  → character set
+# [^] → not in character set
+# ()  → group
+# |   → or
 
 
 # =====================================================
@@ -207,10 +234,7 @@ print("12. Digit \\d")
 
 text = "Order number is 4587"
 
-result = re.findall(
-    r"\d",
-    text
-)
+result = re.findall( r"\d", text )
 
 print(result)
 
@@ -361,7 +385,7 @@ print(result)
 
 print("20. Start ^")
 
-text = "Python Programming"
+text = "this is Python Programming"
 
 result = re.search(
     r"^Python",
@@ -591,10 +615,10 @@ print(result)
 
 print("31. OR |")
 
-text = "Python and Java"
+text = "Python and Java and nodejs and PHP and Python"
 
 result = re.findall(
-    r"Python|Java",
+    r"Python|Java|nodejs|PHP",
     text
 )
 
@@ -688,7 +712,7 @@ print(result)
 
 print("35. re.fullmatch()")
 
-text = "123456"
+text = "123456 787427 7984545519"
 
 result = re.fullmatch(
     r"\d{6}",
@@ -738,17 +762,11 @@ mobile = "9876543210"
 
 pattern = r"[6-9]\d{9}"
 
-result = re.fullmatch(
-    pattern,
-    mobile
-)
+result = re.fullmatch(pattern,mobile)
 
 if result:
-
     print("Valid Mobile Number")
-
 else:
-
     print("Invalid Mobile Number")
 
 
@@ -840,9 +858,9 @@ print("41. Remove Extra Spaces")
 text = "Python     is    easy"
 
 result = re.sub(
-    r"\s+",
-    " ",
-    text
+    r"\s+", # what to find
+    "_", # what to replace it with
+    text # where to search
 )
 
 print(result)
@@ -911,7 +929,7 @@ print(r"\W      -> Non Word Character")
 print(r"\s      -> Whitespace")
 print(r"\S      -> Non Whitespace")
 
-print(".       -> Any Character")
+print(".       -> Any Character") # pattern = r"c.t"
 
 print("^       -> Start")
 print("$       -> End")
@@ -920,14 +938,14 @@ print("*       -> Zero or More")
 print("+       -> One or More")
 print("?       -> Zero or One")
 
-print("{n}     -> Exactly n")
-print("{n,m}   -> Between n and m")
+print("{n}     -> Exactly n") # pattern = r"\d{4}"
+print("{n,m}   -> Between n and m") # pattern = r"\d{2,4}"
 
 print("[]      -> Character Set")
 print("[^]     -> Not in Character Set")
 
-print("()      -> Group")
-print("|       -> OR")
+print("()      -> Group") # pattern = r"(Python)"
+print("|       -> OR") # pattern = r"Python|Java"
 
 print(r"\b      -> Word Boundary")
 
@@ -938,13 +956,13 @@ print(r"\b      -> Word Boundary")
 
 print("45. Important re Methods")
 
-print("re.search()")
-print("re.match()")
-print("re.fullmatch()")
-print("re.findall()")
-print("re.finditer()")
-print("re.sub()")
-print("re.split()")
+print("re.search()") # search ANYWHERE in the string
+print("re.match()") # match FROM START of the string
+print("re.fullmatch()") # match ENTIRE string
+print("re.findall()") # find ALL matches
+print("re.finditer()") # find ALL matches with positions
+print("re.sub()") # replace text
+print("re.split()") # split text
 
 
 # =====================================================

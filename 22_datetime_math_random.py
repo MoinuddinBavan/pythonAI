@@ -1,63 +1,74 @@
 # =====================================================
-# DATETIME, MATH AND RANDOM
+# 22. DATETIME, MATH AND RANDOM
 # =====================================================
 
-print("=" * 50)
-print("Datetime, Math and Random")
-print("=" * 50)
-
-
-# =====================================================
-# 1. DATETIME MODULE
-# =====================================================
-
-print("1. Datetime Module")
-
-import datetime
-
-# datetime is Python's built-in module
-# for working with dates and times.
+print("=" * 60)
+print("Python - Datetime, Math and Random")
+print("=" * 60)
 
 
 # =====================================================
-# 2. CURRENT DATE AND TIME
+# IMPORTS
 # =====================================================
 
-print("2. Current Date and Time")
+from datetime import datetime, date, timedelta
+import math
+import random
+import secrets
 
-now = datetime.datetime.now()
+
+# =====================================================
+# PART 1 - DATETIME
+# =====================================================
+
+print("\n" + "=" * 60)
+print("PART 1 - DATETIME")
+print("=" * 60)
+
+
+# =====================================================
+# 1. CURRENT DATE AND TIME
+# =====================================================
+
+print("\n1. Current Date and Time")
+
+now = datetime.now()
 
 print(now)
 
 
+# datetime.now()
+# ↓
+# Gives current local date + time.
+#
 # Example:
 #
-# 2026-08-17 08:30:45.123456
+# 2026-08-20 15:45:30.123456
 
 
 # =====================================================
-# 3. CURRENT DATE
+# 2. CURRENT DATE
 # =====================================================
 
-print("3. Current Date")
+print("\n2. Current Date")
 
-today = datetime.date.today()
+today = date.today()
 
 print(today)
 
 
-# Example:
+# Output format:
 #
-# 2026-08-17
+# YYYY-MM-DD
 
 
 # =====================================================
-# 4. DATE PARTS
+# 3. DATE PARTS
 # =====================================================
 
-print("4. Date Parts")
+print("\n3. Date Parts")
 
-today = datetime.date.today()
+today = date.today()
 
 print("Year:", today.year)
 print("Month:", today.month)
@@ -65,12 +76,12 @@ print("Day:", today.day)
 
 
 # =====================================================
-# 5. TIME PARTS
+# 4. TIME PARTS
 # =====================================================
 
-print("5. Time Parts")
+print("\n4. Time Parts")
 
-now = datetime.datetime.now()
+now = datetime.now()
 
 print("Hour:", now.hour)
 print("Minute:", now.minute)
@@ -78,23 +89,19 @@ print("Second:", now.second)
 
 
 # =====================================================
-# 6. CREATE DATE
+# 5. CREATE OUR OWN DATE
 # =====================================================
 
-print("6. Create Date")
+print("\n5. Create Date")
 
-date = datetime.date(
-    2026,
-    8,
-    15
-)
+independence_day = date( 2026, 8, 15 )
 
-print(date)
+print(independence_day)
 
 
-# Format:
+# Syntax:
 #
-# datetime.date(
+# date(
 #     year,
 #     month,
 #     day
@@ -102,158 +109,186 @@ print(date)
 
 
 # =====================================================
-# 7. CREATE DATETIME
+# 6. CREATE OUR OWN DATETIME
 # =====================================================
 
-print("7. Create Datetime")
+print("\n6. Create Datetime")
 
-meeting = datetime.datetime(
+meeting = datetime(
     2026,
     8,
-    20,
+    25,
     10,
-    30
+    30,
+    0
 )
 
 print(meeting)
 
 
-# year
-# month
-# day
-# hour
-# minute
+# Syntax:
+#
+# datetime(
+#     year,
+#     month,
+#     day,
+#     hour,
+#     minute,
+#     second
+# )
 
 
 # =====================================================
-# 8. strftime()
+# 7. strftime()
 # =====================================================
 
-print("8. strftime()")
+print("\n7. strftime()")
 
-now = datetime.datetime.now()
+now = datetime.now()
 
-formatted = now.strftime(
+formatted_date = now.strftime(
     "%d-%m-%Y"
 )
 
-print(formatted)
+print(formatted_date)
 
 
 # strftime()
-# converts date/time into formatted STRING.
-
-
-# =====================================================
-# 9. DATE FORMATTING
-# =====================================================
-
-print("9. Date Formatting")
-
-now = datetime.datetime.now()
-
-print(
-    now.strftime("%d/%m/%Y")
-)
-
-print(
-    now.strftime("%d-%m-%Y")
-)
-
-print(
-    now.strftime("%Y-%m-%d")
-)
-
-print(
-    now.strftime("%d %B %Y")
-)
-
-
-# Common formats:
+# ↓
+# datetime → string
 #
-# %d → Day
-# %m → Month number
-# %Y → Full year
-# %y → Short year
-# %B → Full month name
-# %b → Short month name
-# %A → Full weekday name
-# %a → Short weekday name
-# %H → Hour (24-hour)
-# %I → Hour (12-hour)
-# %M → Minute
-# %S → Second
-# %p → AM / PM
+# Think:
+#
+# "format datetime as string"
 
 
 # =====================================================
-# 10. DATE AND TIME FORMATTING
+# 8. IMPORTANT DATE FORMAT CODES
 # =====================================================
 
-print("10. Date and Time Formatting")
+print("\n8. Date Formatting")
 
-now = datetime.datetime.now()
+now = datetime.now()
 
-print(
-    now.strftime(
-        "%d-%m-%Y %H:%M:%S"
-    )
-)
+print(now.strftime("%d-%m-%Y"))
 
-print(
-    now.strftime(
-        "%d %B %Y %I:%M %p"
-    )
-)
+print(now.strftime("%d/%m/%Y"))
+
+print(now.strftime("%Y-%m-%d"))
+
+print(now.strftime("%d %B %Y"))
+
+print(now.strftime("%A, %d %B %Y"))
+
+print(now.strftime("%I:%M %p"))
+
+
+# IMPORTANT CODES:
+#
+# %d
+# → Day
+#
+# %m
+# → Month number
+#
+# %Y
+# → Full year
+#
+# %y
+# → Short year
+#
+# %B
+# → Full month name
+#
+# %b
+# → Short month name
+#
+# %A
+# → Full weekday
+#
+# %a
+# → Short weekday
+#
+# %H
+# → 24-hour format
+#
+# %I
+# → 12-hour format
+#
+# %M
+# → Minute
+#
+# %S
+# → Second
+#
+# %p
+# → AM / PM
 
 
 # =====================================================
-# 11. strptime()
+# 9. strptime() # Parse String to DateTime
 # =====================================================
 
-print("11. strptime()")
+print("\n9. strptime()")
 
 date_string = "20-08-2026"
 
-date = datetime.datetime.strptime(
+converted_date = datetime.strptime(
     date_string,
     "%d-%m-%Y"
 )
 
-print(date)
-print(type(date))
+print(converted_date)
+print(type(converted_date))
 
 
 # strptime()
+# ↓
+# string → datetime
 #
-# STRING → DATETIME
+# Think:
+#
+# "parse string into datetime"
 
 
 # =====================================================
-# 12. strftime() VS strptime()
+# 10. strftime() VS strptime()
 # =====================================================
 
-print("12. strftime vs strptime")
+print("\n10. strftime vs strptime")
 
 # strftime()
 #
-# DATETIME → STRING
+# datetime
+#     ↓
+# string
 
 
 # strptime()
 #
-# STRING → DATETIME
+# string
+#     ↓
+# datetime
+
+
+# Easy Remember:
+#
+# strftime
+# → FORMAT date as STRING
+#
+# strptime
+# → PARSE STRING into date/time
 
 
 # =====================================================
-# 13. TIMEDELTA
+# 11. timedelta
 # =====================================================
 
-print("13. timedelta")
+print("\n11. timedelta")
 
-today = datetime.date.today()
+today = date.today()
 
-after_7_days = today + datetime.timedelta(
+after_7_days = today + timedelta(
     days=7
 )
 
@@ -261,18 +296,28 @@ print("Today:", today)
 print("After 7 Days:", after_7_days)
 
 
-# timedelta represents a duration.
+# timedelta
+# ↓
+# Represents a duration.
+#
+# We can add or subtract:
+#
+# days
+# seconds
+# weeks
+# hours
+# minutes
 
 
 # =====================================================
-# 14. PREVIOUS DATE
+# 12. YESTERDAY
 # =====================================================
 
-print("14. Previous Date")
+print("\n12. Yesterday")
 
-today = datetime.date.today()
+today = date.today()
 
-yesterday = today - datetime.timedelta(
+yesterday = today - timedelta(
     days=1
 )
 
@@ -280,166 +325,336 @@ print(yesterday)
 
 
 # =====================================================
+# 13. TOMORROW
+# =====================================================
+
+print("\n13. Tomorrow")
+
+today = date.today()
+
+tomorrow = today + timedelta(
+    days=1
+)
+
+print(tomorrow)
+
+
+# =====================================================
+# 14. AFTER 30 DAYS
+# =====================================================
+
+print("\n14. After 30 Days")
+
+today = date.today()
+
+future_date = today + timedelta(
+    days=30
+)
+
+print(future_date)
+
+
+# =====================================================
 # 15. DATE DIFFERENCE
 # =====================================================
 
-print("15. Date Difference")
+print("\n15. Date Difference")
 
-start = datetime.date(
+start_date = date(
     2026,
     8,
     1
 )
 
-end = datetime.date(
+end_date = date(
     2026,
     8,
     20
 )
 
-difference = end - start
+difference = end_date - start_date
 
 print(difference)
-print(difference.days)
+
+print(
+    "Total Days:",
+    difference.days
+)
 
 
 # =====================================================
-# 16. REAL EXAMPLE - EXPIRY DATE
+# 16. COMPARE DATES
 # =====================================================
 
-print("16. Expiry Date")
+print("\n16. Compare Dates")
 
-purchase_date = datetime.date.today()
+today = date.today()
+
+expiry_date = date(
+    2026,
+    12,
+    31
+)
+
+if expiry_date > today:
+
+    print("Subscription Active")
+
+else:
+
+    print("Subscription Expired")
+
+
+# Dates can be compared using:
+#
+# >
+# <
+# >=
+# <=
+# ==
+# !=
+
+
+# =====================================================
+# 17. REAL EXAMPLE - SUBSCRIPTION EXPIRY
+# =====================================================
+
+print("\n17. Subscription Expiry")
+
+purchase_date = date.today()
 
 expiry_date = (
     purchase_date
-    + datetime.timedelta(days=365)
+    + timedelta(days=365)
 )
 
-print("Purchase:", purchase_date)
-print("Expiry:", expiry_date)
+print(
+    "Purchase Date:",
+    purchase_date
+)
+
+print(
+    "Expiry Date:",
+    expiry_date
+)
 
 
 # =====================================================
-# MATH MODULE
+# 18. REAL EXAMPLE - INVOICE DUE DATE
 # =====================================================
 
-print("=" * 50)
-print("Math Module")
-print("=" * 50)
+print("\n18. Invoice Due Date")
+
+invoice_date = date.today()
+
+due_date = invoice_date + timedelta(
+    days=15
+)
+
+print(
+    "Invoice Date:",
+    invoice_date
+)
+
+print(
+    "Due Date:",
+    due_date
+)
 
 
 # =====================================================
-# 17. IMPORT MATH
+# 19. REAL EXAMPLE - CHECK EXPIRED
 # =====================================================
 
-print("17. Import Math")
+print("\n19. Check Expired")
 
-import math
+expiry_date = date(
+    2026,
+    8,
+    10
+)
+
+today = date.today()
+
+if today > expiry_date:
+
+    print("Expired")
+
+elif today == expiry_date:
+
+    print("Expires Today")
+
+else:
+
+    print("Active")
 
 
 # =====================================================
-# 18. math.ceil()
+# PART 2 - MATH MODULE
 # =====================================================
 
-print("18. math.ceil()")
+print("\n" + "=" * 60)
+print("PART 2 - MATH MODULE")
+print("=" * 60)
+
+
+# =====================================================
+# 20. math.ceil()
+# =====================================================
+
+print("\n20. math.ceil()")
 
 number = 10.2
 
-print(
-    math.ceil(number)
-)
+result = math.ceil(number)
+
+print(result)
 
 
 # ceil()
-# rounds UP.
+# ↓
+# Round UP
 #
-# 10.2 → 11
+# 10.2
+# ↓
+# 11
 
 
 # =====================================================
-# 19. math.floor()
+# 21. math.floor()
 # =====================================================
 
-print("19. math.floor()")
+print("\n21. math.floor()")
 
 number = 10.9
 
+result = math.floor(number)
+
+print(result)
+
+
+# floor()
+# ↓
+# Round DOWN
+#
+# 10.9
+# ↓
+# 10
+
+
+# =====================================================
+# 22. round() VS ceil() VS floor()
+# =====================================================
+
+print("\n22. round vs ceil vs floor")
+
+number = 10.6
+
 print(
+    "round:",
+    round(number)
+)
+
+print(
+    "ceil:",
+    math.ceil(number)
+)
+
+print(
+    "floor:",
     math.floor(number)
 )
 
 
-# floor()
-# rounds DOWN.
-#
-# 10.9 → 10
-
-
-# =====================================================
-# 20. round() VS ceil() VS floor()
-# =====================================================
-
-print("20. round vs ceil vs floor")
-
-number = 10.6
-
-print("round:", round(number))
-print("ceil:", math.ceil(number))
-print("floor:", math.floor(number))
-
-
 # round()
-# → Nearest integer
+# → nearest
 #
 # ceil()
-# → Always upward
+# → upward
 #
 # floor()
-# → Always downward
+# → downward
 
 
 # =====================================================
-# 21. math.sqrt()
+# 23. math.sqrt()
 # =====================================================
 
-print("21. math.sqrt()")
+print("\n23. math.sqrt()")
 
-print(
-    math.sqrt(64)
-)
+result = math.sqrt(64)
+
+print(result)
 
 
-# Square root:
+# sqrt()
+# ↓
+# Square Root
 #
-# 64 → 8
+# √64 = 8
 
 
 # =====================================================
-# 22. math.pow()
+# 24. math.pow() # 2³ = 2 × 2 × 2 = 8
 # =====================================================
 
-print("22. math.pow()")
+print("\n24. math.pow()")
 
-print(
-    math.pow(2, 3)
+result = math.pow(
+    2,
+    3
 )
 
+print(result)
 
-# 2³ = 8
+
+# 2 power 3
 #
-# math.pow() returns float.
+# 2 × 2 × 2
+#
+# = 8
+
+
+# math.pow()
+# returns float.
+#
+# 8.0
 
 
 # =====================================================
-# 23. math.factorial()
+# 25. ** POWER OPERATOR
 # =====================================================
 
-print("23. math.factorial()")
+print("\n25. Power Operator")
 
-print(
-    math.factorial(5)
-)
+result = 2 ** 3
+
+print(result)
+
+
+# 2 ** 3
+# ↓
+# 8
+
+
+# Difference:
+#
+# math.pow(2, 3)
+# → 8.0
+#
+# 2 ** 3
+# → 8
+
+
+# =====================================================
+# 26. math.factorial()
+# =====================================================
+
+print("\n26. Factorial")
+
+result = math.factorial(5)
+
+print(result)
 
 
 # 5!
@@ -450,19 +665,24 @@ print(
 
 
 # =====================================================
-# 24. math.pi
+# 27. math.pi
 # =====================================================
 
-print("24. math.pi")
+print("\n27. PI")
 
 print(math.pi)
 
 
+# PI approximately:
+#
+# 3.141592...
+
+
 # =====================================================
-# 25. CIRCLE AREA
+# 28. REAL EXAMPLE - CIRCLE AREA
 # =====================================================
 
-print("25. Circle Area")
+print("\n28. Circle Area")
 
 radius = 5
 
@@ -472,131 +692,172 @@ area = (
     * radius
 )
 
-print(area)
-
-
-# =====================================================
-# 26. math.gcd()
-# =====================================================
-
-print("26. math.gcd()")
-
 print(
-    math.gcd(12, 18)
+    "Area:",
+    area
 )
 
 
+# Formula:
+#
+# π × r²
+
+
+# =====================================================
+# 29. math.gcd() # Greatest Common Divisor
+# =====================================================
+
+print("\n29. GCD")
+
+result = math.gcd(
+    12,
+    18
+)
+
+print(result)
+
+
+# GCD
+# ↓
 # Greatest Common Divisor
 #
-# 12 and 18 → 6
+# 12 and 18
+# ↓
+# 6
 
 
 # =====================================================
-# 27. math.lcm()
+# 30. math.lcm()
 # =====================================================
 
-print("27. math.lcm()")
+print("\n30. LCM")
 
-print(
-    math.lcm(4, 6)
+result = math.lcm(
+    4,
+    6
 )
 
+print(result)
 
+
+# LCM
+# ↓
 # Least Common Multiple
 #
-# 4 and 6 → 12
+# 4 and 6
+# ↓
+# 12
 
 
 # =====================================================
-# 28. math.fabs()
+# 31. abs() VS math.fabs()
 # =====================================================
 
-print("28. math.fabs()")
+print("\n31. abs vs fabs")
+
+print(
+    abs(-50)
+)
 
 print(
     math.fabs(-50)
 )
 
 
-# Returns absolute value as float.
+# abs(-50)
+# → 50
 #
-# -50 → 50.0
+# math.fabs(-50)
+# → 50.0
 
 
 # =====================================================
-# 29. math constants
+# 32. REAL EXAMPLE - PAGE COUNT
 # =====================================================
 
-print("29. Math Constants")
+print("\n32. Page Count")
 
-print("PI:", math.pi)
-print("E:", math.e)
+records = 103
 
+records_per_page = 10
 
-# =====================================================
-# 30. REAL EXAMPLE - TOKEN CHUNKS
-# =====================================================
-
-print("30. Token Chunks")
-
-tokens = 500
-
-chunk_size = 128
-
-chunks = math.ceil(
-    tokens / chunk_size
+total_pages = math.ceil(
+    records / records_per_page
 )
-
-print(chunks)
-
-
-# 500 / 128
-# ≈ 3.90
-#
-# We need 4 chunks.
-#
-# ceil() → 4
-
-
-# =====================================================
-# RANDOM MODULE
-# =====================================================
-
-print("=" * 50)
-print("Random Module")
-print("=" * 50)
-
-
-# =====================================================
-# 31. IMPORT RANDOM
-# =====================================================
-
-print("31. Import Random")
-
-import random
-
-
-# =====================================================
-# 32. random.random()
-# =====================================================
-
-print("32. random.random()")
 
 print(
-    random.random()
+    "Total Pages:",
+    total_pages
 )
 
 
-# Returns random float:
+# 103 records
 #
-# 0.0 <= number < 1.0
+# 10 records/page
+#
+# Need:
+#
+# 11 pages
 
 
 # =====================================================
-# 33. random.randint()
+# 33. REAL AI EXAMPLE - TOKEN CHUNKS
 # =====================================================
 
-print("33. random.randint()")
+print("\n33. AI Token Chunks")
+
+total_tokens = 1000
+
+chunk_size = 256
+
+total_chunks = math.ceil(
+    total_tokens / chunk_size
+)
+
+print(
+    "Total Chunks:",
+    total_chunks
+)
+
+
+# Useful later in:
+#
+# AI
+# RAG
+# text chunking
+# data processing
+
+
+# =====================================================
+# PART 3 - RANDOM MODULE
+# =====================================================
+
+print("\n" + "=" * 60)
+print("PART 3 - RANDOM MODULE")
+print("=" * 60)
+
+
+# =====================================================
+# 34. random.random()
+# =====================================================
+
+print("\n34. random.random()")
+
+number = random.random()
+
+print(number)
+
+
+# Gives float:
+#
+# 0.0 <= value < 1.0
+
+
+# =====================================================
+# 35. random.randint()
+# =====================================================
+
+print("\n35. random.randint()")
 
 number = random.randint(
     1,
@@ -606,18 +867,20 @@ number = random.randint(
 print(number)
 
 
-# Random integer from:
-#
-# 1 to 10
+# randint(1, 10)
 #
 # Both included.
+#
+# Possible:
+#
+# 1 through 10
 
 
 # =====================================================
-# 34. random.randrange()
+# 36. random.randrange()
 # =====================================================
 
-print("34. random.randrange()")
+print("\n36. random.randrange()")
 
 number = random.randrange(
     1,
@@ -627,90 +890,93 @@ number = random.randrange(
 print(number)
 
 
-# Similar to range().
-#
-# Start included
+# Start included.
 # Stop excluded.
 #
 # Possible:
 #
-# 1 to 9
+# 1 through 9
 
 
 # =====================================================
-# 35. randint() VS randrange()
+# 37. randint() VS randrange()
 # =====================================================
 
-print("35. randint vs randrange")
-
-print(
-    random.randint(1, 10)
-)
-
-print(
-    random.randrange(1, 10)
-)
-
+print("\n37. randint vs randrange")
 
 # randint(1, 10)
-# → 1 through 10
 #
+# 1 through 10
+
+
 # randrange(1, 10)
-# → 1 through 9
+#
+# 1 through 9
 
 
 # =====================================================
-# 36. random.choice()
+# 38. random.choice()
 # =====================================================
 
-print("36. random.choice()")
+print("\n38. random.choice()")
 
 students = [
     "Moin",
     "Aamir",
-    "Zaid"
+    "Zaid",
+    "Ahmed"
 ]
 
 winner = random.choice(
     students
 )
 
-print(winner)
+print(
+    "Winner:",
+    winner
+)
 
 
-# Selects one random item.
+# choice()
+# ↓
+# Select ONE random item.
 
 
 # =====================================================
-# 37. random.choices()
+# 39. random.choices()
 # =====================================================
 
-print("37. random.choices()")
+print("\n39. random.choices()")
 
 students = [
     "Moin",
     "Aamir",
-    "Zaid"
+    "Zaid",
+    "Ahmed"
 ]
 
 selected = random.choices(
     students,
-    k=2
+    k=3
 )
 
 print(selected)
 
 
-# Selects multiple random items.
+# choices()
 #
-# Duplicate values are possible.
+# Select multiple values.
+#
+# IMPORTANT:
+#
+# Duplicate values ARE possible.
 
 
 # =====================================================
-# 38. random.sample()
+# 40. random.sample()
 # =====================================================
 
-print("38. random.sample()")
+print("\n40. random.sample()")
 
 students = [
     "Moin",
@@ -721,33 +987,40 @@ students = [
 
 selected = random.sample(
     students,
-    k=2
+    k=3
 )
 
 print(selected)
 
 
-# Selects multiple UNIQUE items.
+# sample()
+#
+# Select multiple UNIQUE items.
+#
+# No duplicate selection.
 
 
 # =====================================================
-# 39. choices() VS sample()
+# 41. choices() VS sample()
 # =====================================================
 
-print("39. choices vs sample")
+print("\n41. choices vs sample")
 
 # choices()
-# → Duplicates possible
-#
+# ↓
+# Duplicate possible
+
+
 # sample()
-# → Unique selection
+# ↓
+# Unique selection
 
 
 # =====================================================
-# 40. random.shuffle()
+# 42. random.shuffle()
 # =====================================================
 
-print("40. random.shuffle()")
+print("\n42. random.shuffle()")
 
 numbers = [
     1,
@@ -763,32 +1036,73 @@ print(numbers)
 
 
 # shuffle()
-# changes the original list order.
+# ↓
+# Changes the ORIGINAL list.
 
 
 # =====================================================
-# 41. random.uniform()
+# 43. random.uniform()
 # =====================================================
 
-print("41. random.uniform()")
+print("\n43. random.uniform()")
 
-number = random.uniform(
-    1.5,
-    5.5
+price = random.uniform(
+    100,
+    500
 )
 
-print(number)
+print(price)
 
 
-# Returns random float
-# between given values.
+# Gives random FLOAT
+# between given numbers.
 
 
 # =====================================================
-# 42. RANDOM OTP - LEARNING EXAMPLE
+# 44. RANDOM DICE
 # =====================================================
 
-print("42. Random OTP")
+print("\n44. Random Dice")
+
+dice = random.randint(
+    1,
+    6
+)
+
+print(
+    "Dice:",
+    dice
+)
+
+
+# =====================================================
+# 45. RANDOM STUDENT
+# =====================================================
+
+print("\n45. Random Student")
+
+students = [
+    "Moin",
+    "Aamir",
+    "Zaid",
+    "Ahmed"
+]
+
+student = random.choice(
+    students
+)
+
+print(
+    "Selected Student:",
+    student
+)
+
+
+# =====================================================
+# 46. LEARNING OTP USING random
+# =====================================================
+
+print("\n46. Random OTP - Learning Only")
 
 otp = random.randint(
     100000,
@@ -798,41 +1112,82 @@ otp = random.randint(
 print(otp)
 
 
-# NOTE:
+# IMPORTANT:
 #
-# random is fine for learning,
-# games and simulations.
+# random is NOT recommended
+# for security-sensitive OTPs,
+# passwords or security tokens.
 #
-# Do NOT use random for
-# security-sensitive OTPs/passwords.
+# For security:
 #
-# Use secrets module instead.
+# use secrets module.
 
 
 # =====================================================
-# 43. secrets MODULE
+# PART 4 - SECRETS MODULE
 # =====================================================
 
-print("43. secrets Module")
+print("\n" + "=" * 60)
+print("PART 4 - SECRETS MODULE")
+print("=" * 60)
 
-import secrets
 
-otp = secrets.randbelow(
-    900000
-) + 100000
+# =====================================================
+# 47. secrets.randbelow()
+# =====================================================
+
+print("\n47. Secure Random Number")
+
+number = secrets.randbelow(
+    100
+)
+
+print(number)
+
+
+# randbelow(100)
+#
+# Possible:
+#
+# 0 through 99
+
+
+# =====================================================
+# 48. SECURE 6-DIGIT OTP-STYLE CODE
+# =====================================================
+
+print("\n48. Secure 6-Digit Code")
+
+otp = (
+    secrets.randbelow(900000)
+    + 100000
+)
 
 print(otp)
 
 
-# secrets is designed for
-# security-sensitive randomness.
+# Why?
+#
+# secrets.randbelow(900000)
+#
+# gives:
+#
+# 0 to 899999
+#
+# Then:
+#
+# + 100000
+#
+# gives:
+#
+# 100000 to 999999
 
 
 # =====================================================
-# 44. RANDOM PASSWORD CHARACTER
+# 49. secrets.choice()
 # =====================================================
 
-print("44. Random Character")
+print("\n49. secrets.choice()")
 
 characters = (
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -848,100 +1203,570 @@ print(character)
 
 
 # =====================================================
-# 45. RANDOM PASSWORD
+# 50. SECURE PASSWORD
 # =====================================================
 
-print("45. Random Password")
+print("\n50. Secure Password")
 
 characters = (
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"
     "0123456789"
+    "!@#$%"
 )
 
 password = "".join(
     secrets.choice(characters)
-    for _ in range(10)
+    for _ in range(12)
 )
 
-print(password)
-
-
-# =====================================================
-# 46. REAL EXAMPLE - DICE
-# =====================================================
-
-print("46. Dice")
-
-dice = random.randint(
-    1,
-    6
+print(
+    "Password:",
+    password
 )
 
-print("Dice:", dice)
+
+# =====================================================
+# IMPORTANT NEW SYNTAX
+# =====================================================
+
+# "".join(...)
+#
+# join()
+# combines multiple strings
+# into ONE string.
+
+
+# Example:
+#
+# letters = ["A", "B", "C"]
+#
+# "".join(letters)
+#
+# ABC
 
 
 # =====================================================
-# 47. REAL EXAMPLE - RANDOM WINNER
+# WHAT IS THIS?
+#
+# for _ in range(12)
 # =====================================================
 
-print("47. Random Winner")
+# _ is just a variable name.
+#
+# We commonly use _
+# when we don't need the loop value.
 
-students = [
-    "Moin",
-    "Aamir",
-    "Zaid",
-    "Ahmed"
-]
 
-winner = random.choice(
-    students
+# Example:
+#
+# for _ in range(3):
+#     print("Hello")
+#
+#
+# Output:
+#
+# Hello
+# Hello
+# Hello
+
+
+# In password generation:
+#
+# repeat 12 times
+#      ↓
+# choose one random character
+#      ↓
+# join all characters
+#      ↓
+# 12-character password
+
+
+# =====================================================
+# 51. random VS secrets
+# =====================================================
+
+print("\n51. random vs secrets")
+
+# random
+# ↓
+# General-purpose randomness.
+#
+# Use for:
+#
+# Games
+# Testing
+# Simulations
+# Random student selection
+# Sample data
+
+
+# secrets
+# ↓
+# Security-sensitive randomness.
+#
+# Use for:
+#
+# Tokens
+# Passwords
+# Secure codes
+# Reset tokens
+# Authentication-related values
+
+
+# =====================================================
+# QUICK REVISION
+# =====================================================
+
+print("\n" + "=" * 60)
+print("QUICK REVISION")
+print("=" * 60)
+
+
+# =====================================================
+# DATETIME
+# =====================================================
+
+# datetime.now()
+# → Current date + time
+
+
+# date.today()
+# → Current date
+
+
+# strftime()
+# → datetime → string
+
+
+# strptime()
+# → string → datetime
+
+
+# timedelta()
+# → Add / subtract durations
+
+
+# =====================================================
+# MATH
+# =====================================================
+
+# math.ceil()
+# → Round UP
+
+
+# math.floor()
+# → Round DOWN
+
+
+# math.sqrt()
+# → Square root
+
+
+# math.pow()
+# → Power
+
+
+# math.factorial()
+# → Factorial
+
+
+# math.pi
+# → PI
+
+
+# math.gcd()
+# → Greatest Common Divisor
+
+
+# math.lcm()
+# → Least Common Multiple
+
+
+# =====================================================
+# RANDOM
+# =====================================================
+
+# random.random()
+# → Random float 0 to less than 1
+
+
+# random.randint()
+# → Both start and end included
+
+
+# random.randrange()
+# → End excluded
+
+
+# random.choice()
+# → One item
+
+
+# random.choices()
+# → Multiple items
+# → Duplicate possible
+
+
+# random.sample()
+# → Multiple unique items
+
+
+# random.shuffle()
+# → Shuffle original list
+
+
+# random.uniform()
+# → Random float in range
+
+
+# =====================================================
+# SECRETS
+# =====================================================
+
+# secrets.randbelow()
+# → Secure random integer
+
+
+# secrets.choice()
+# → Secure random choice
+
+
+# Use secrets instead of random
+# for security-sensitive values.
+
+
+# =====================================================
+# INTERVIEW QUESTIONS & ANSWERS
+# =====================================================
+
+print("\n" + "=" * 60)
+print("INTERVIEW QUESTIONS")
+print("=" * 60)
+
+
+# =====================================================
+# Q1. What is the datetime module?
+# =====================================================
+
+# Answer:
+# datetime is a Python standard-library module
+# used for working with dates and times.
+
+
+# =====================================================
+# Q2. Difference between date and datetime?
+# =====================================================
+
+# Answer:
+#
+# date
+# → Stores mainly:
+#   year, month, day
+#
+# datetime
+# → Stores:
+#   year, month, day,
+#   hour, minute, second,
+#   microsecond
+
+
+# =====================================================
+# Q3. What is datetime.now()?
+# =====================================================
+
+# Answer:
+# datetime.now() returns the current
+# local date and time.
+
+
+# =====================================================
+# Q4. What is date.today()?
+# =====================================================
+
+# Answer:
+# date.today() returns the current
+# local calendar date.
+
+
+# =====================================================
+# Q5. Difference between strftime() and strptime()?
+# =====================================================
+
+# Answer:
+#
+# strftime()
+# → datetime to string
+#
+# strptime()
+# → string to datetime
+
+
+# Easy:
+#
+# FORMAT TIME
+# → strftime
+#
+# PARSE TIME
+# → strptime
+
+
+# =====================================================
+# Q6. What is timedelta?
+# =====================================================
+
+# Answer:
+# timedelta represents a duration
+# or difference between dates/times.
+#
+# It is commonly used to:
+#
+# add days
+# subtract days
+# calculate expiry
+# calculate due date
+
+
+# =====================================================
+# Q7. How do you calculate difference between two dates?
+# =====================================================
+
+# Answer:
+
+# start = date(2026, 8, 1)
+# end = date(2026, 8, 20)
+#
+# difference = end - start
+#
+# print(difference.days)
+
+
+# =====================================================
+# Q8. Difference between ceil(), floor() and round()?
+# =====================================================
+
+# Answer:
+#
+# ceil()
+# → Round upward
+#
+# floor()
+# → Round downward
+#
+# round()
+# → Round to nearest value
+
+
+# =====================================================
+# Q9. Difference between math.pow() and **?
+# =====================================================
+
+# Answer:
+#
+# math.pow(2, 3)
+# → 8.0
+#
+# 2 ** 3
+# → 8
+#
+# math.pow() converts operands to float
+# and returns float.
+#
+# ** is Python's exponentiation operator.
+
+
+# =====================================================
+# Q10. Difference between randint() and randrange()?
+# =====================================================
+
+# Answer:
+#
+# randint(1, 10)
+# → 1 through 10
+#
+# randrange(1, 10)
+# → 1 through 9
+
+
+# =====================================================
+# Q11. Difference between choice(), choices()
+# and sample()?
+# =====================================================
+
+# Answer:
+#
+# choice()
+# → Select ONE item.
+#
+# choices()
+# → Select multiple items.
+# → Duplicates possible.
+#
+# sample()
+# → Select multiple UNIQUE items.
+
+
+# =====================================================
+# Q12. Does shuffle() return a new list?
+# =====================================================
+
+# Answer:
+# No.
+#
+# random.shuffle()
+# modifies the original list in place
+# and returns None.
+
+
+# =====================================================
+# Q13. Should random be used for passwords?
+# =====================================================
+
+# Answer:
+# No.
+#
+# random is not designed for
+# security-sensitive randomness.
+#
+# Use:
+#
+# secrets
+
+
+# =====================================================
+# Q14. random vs secrets?
+# =====================================================
+
+# Answer:
+#
+# random
+# → simulations
+# → games
+# → testing
+# → normal random selections
+#
+# secrets
+# → passwords
+# → security tokens
+# → secure random values
+
+
+# =====================================================
+# Q15. Give a real-world use of datetime.
+# =====================================================
+
+# Answer:
+#
+# Subscription expiry
+# Invoice due date
+# Employee attendance
+# Task deadlines
+# Booking systems
+# Logs
+# Reports
+# Scheduled jobs
+
+
+# =====================================================
+# Q16. How would you check whether a subscription
+# has expired?
+# =====================================================
+
+# Answer:
+
+# if date.today() > expiry_date:
+#     print("Expired")
+
+
+# =====================================================
+# Q17. What is the output range of random.random()?
+# =====================================================
+
+# Answer:
+#
+# 0.0 <= value < 1.0
+
+
+# =====================================================
+# Q18. What does math.sqrt(64) return?
+# =====================================================
+
+# Answer:
+#
+# 8.0
+
+
+# =====================================================
+# MOST IMPORTANT INTERVIEW REVISION
+# =====================================================
+
+# 1.
+# strftime() vs strptime()
+
+
+# 2.
+# date vs datetime
+
+
+# 3.
+# What is timedelta?
+
+
+# 4.
+# ceil() vs floor() vs round()
+
+
+# 5.
+# randint() vs randrange()
+
+
+# 6.
+# choice() vs choices() vs sample()
+
+
+# 7.
+# random vs secrets
+
+
+# 8.
+# Does shuffle() modify original list?
+
+
+# 9.
+# How to calculate date difference?
+
+
+# 10.
+# How to calculate an expiry date?
+
+
+# =====================================================
+# FINAL SUMMARY
+# =====================================================
+
+print("\n" + "=" * 60)
+print("SUMMARY")
+print("=" * 60)
+
+print(
+    "datetime → Date and Time"
 )
 
-print("Winner:", winner)
+print(
+    "timedelta → Date/Time Duration"
+)
+
+print(
+    "math → Mathematical Operations"
+)
+
+print(
+    "random → General Random Values"
+)
+
+print(
+    "secrets → Secure Random Values"
+)
 
 
-# =====================================================
-# 48. SUMMARY - DATETIME
-# =====================================================
-
-print("48. Datetime Summary")
-
-print("datetime.datetime.now()")
-print("datetime.date.today()")
-print("strftime()")
-print("strptime()")
-print("timedelta")
-
-
-# =====================================================
-# 49. SUMMARY - MATH
-# =====================================================
-
-print("49. Math Summary")
-
-print("math.ceil()")
-print("math.floor()")
-print("math.sqrt()")
-print("math.pow()")
-print("math.factorial()")
-print("math.pi")
-print("math.gcd()")
-print("math.lcm()")
-
-
-# =====================================================
-# 50. SUMMARY - RANDOM
-# =====================================================
-
-print("50. Random Summary")
-
-print("random.random()")
-print("random.randint()")
-print("random.randrange()")
-print("random.choice()")
-print("random.choices()")
-print("random.sample()")
-print("random.shuffle()")
-print("random.uniform()")
-print("secrets → secure randomness")
+print("\nTopic 22 Complete")

@@ -23,6 +23,10 @@ message = greet
 print(message())
 
 
+greet() # Calling the function directly.
+greet # Referring to the function without calling it.
+greet.__name__ # Getting the name of the function.
+
 # Function can be stored in a variable.
 
 
@@ -35,7 +39,6 @@ print("2. Function as Argument")
 
 def greet():
     return "Hello"
-
 
 def execute(function):
     print(function())
@@ -363,33 +366,18 @@ import time
 
 
 def execution_time(function):
-
     def wrapper(*args, **kwargs):
-
         start = time.time()
-
         result = function(*args, **kwargs)
-
         end = time.time()
-
-        print(
-            "Execution Time:",
-            end - start
-        )
-
+        print("Execution Time:", end - start)
         return result
-
     return wrapper
-
 
 @execution_time
 def process_data():
-
     time.sleep(1)
-
     print("Data Processed")
-
-
 process_data()
 
 
@@ -401,42 +389,28 @@ print("14. Multiple Decorators")
 
 
 def decorator_one(function):
-
     def wrapper():
-
         print("Decorator One")
-
         function()
-
     return wrapper
 
 
 def decorator_two(function):
-
     def wrapper():
-
         print("Decorator Two")
-
         function()
-
     return wrapper
-
 
 @decorator_one
 @decorator_two
 def show():
-
     print("Original Function")
-
 
 show()
 
 
 # Equivalent to:
-#
-# show = decorator_one(
-#     decorator_two(show)
-# )
+# show = decorator_one(decorator_two(show))
 
 
 # =====================================================
@@ -449,132 +423,21 @@ print("15. Decorator with Parameters")
 def repeat(times):
 
     def decorator(function):
-
         def wrapper():
-
             for _ in range(times):
-
                 function()
-
         return wrapper
-
     return decorator
-
 
 @repeat(3)
 def hello():
-
     print("Hello")
-
 
 hello()
 
 
-# =====================================================
-# 16. functools.wraps
-# =====================================================
-
-print("16. functools.wraps")
-
-
-from functools import wraps
-
-
-def my_decorator(function):
-
-    @wraps(function)
-    def wrapper(*args, **kwargs):
-
-        print("Before Function")
-
-        result = function(*args, **kwargs)
-
-        print("After Function")
-
-        return result
-
-    return wrapper
-
-
-@my_decorator
-def greet_user(name):
-
-    """Greets a user."""
-
-    return f"Hello {name}"
-
-
-print(greet_user("Moin"))
-
-print(greet_user.__name__)
-
-
-# @wraps(function) preserves information
-# about the original function.
-
-
-# =====================================================
-# 17. @property DECORATOR
-# =====================================================
-
-print("17. @property")
-
-
-class Product:
-
-    def __init__(self, price):
-
-        self.__price = price
-
-    @property
-    def price(self):
-
-        return self.__price
-
-
-product = Product(5000)
-
-print(product.price)
-
-
-# @property makes a method behave
-# like an attribute.
-
-
-# =====================================================
-# 18. @property SETTER
-# =====================================================
-
-print("18. @property Setter")
-
-
-class Product:
-
-    def __init__(self, price):
-
-        self.__price = price
-
-    @property
-    def price(self):
-
-        return self.__price
-
-    @price.setter
-    def price(self, value):
-
-        if value >= 0:
-
-            self.__price = value
-
-
-product = Product(5000)
-
-print(product.price)
-
-product.price = 6000
-
-print(product.price)
-
+for i in range(3):
+    print(i)
 
 # =====================================================
 # 19. @classmethod
@@ -612,7 +475,6 @@ class Calculator:
 
     @staticmethod
     def add(a, b):
-
         return a + b
 
 
@@ -689,7 +551,5 @@ print("@decorator")
 print("Wrapper Function")
 print("*args")
 print("**kwargs")
-print("functools.wraps")
-print("@property")
 print("@classmethod")
 print("@staticmethod")
